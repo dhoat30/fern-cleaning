@@ -2,6 +2,7 @@ export const revalidate = 2592000; // applies to both page and metadata
 
 import Header from '@/Components/UI/Header/Header';
 import ThankYou from '@/Components/UI/ThankYou/ThankYou';
+import LocationsCovered from '@/Components/UI/LocationsCovered/LocationsCovered';
 
 export const metadata = {
     metadataBase: new URL('https://bestnzmovers.co.nz'),
@@ -27,6 +28,7 @@ export default async function Page() {
             <Header />
             <main>
                 <ThankYou />
+                <LocationsCovered />
             </main>
         </>
 

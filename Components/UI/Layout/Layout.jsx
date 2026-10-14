@@ -20,7 +20,6 @@ export default function Layout({
   uspTable,
   sections,
   uspData,
-  locationsCovered,
   hoursCalculatorData,
   spaceCalculatorData,
   contactInfo,
@@ -34,7 +33,14 @@ export default function Layout({
     ["tabs_section", "services"].includes(section.acf_fc_layout) ||
     (section.acf_fc_layout === "show_services" && section.show_services);
 
-  const sectionsJSX = sections.map((section, index) => {
+  const sectionsWithCoverage = sections.filter((section) => !["show_locations", "coverage_map"].includes(section.acf_fc_layout));
+  const coverageIndex = sectionsWithCoverage.findIndex((section) => ["local_faq", "cta_section"].includes(section.acf_fc_layout));
+  sectionsWithCoverage.splice(coverageIndex === -1 ? sectionsWithCoverage.length : coverageIndex, 0, { acf_fc_layout: "coverage_map" });
+
+  const sectionsJSX = sectionsWithCoverage.map((section, index) => {
+    if (section.acf_fc_layout === "coverage_map") {
+      return <LocationsCovered key="coverage-map" />;
+    }
     if (section.acf_fc_layout === "our_work") {
       return (
         <OurWorkSection
@@ -187,17 +193,6 @@ export default function Layout({
           description={uspData.section_description}
           cards={uspData.items}
           showTitle={true}
-        />
-      );
-    }
-    if (section.acf_fc_layout === "show_locations" && section.show_locations) {
-      return (
-        <LocationsCovered
-          key={index}
-          title={locationsCovered.title}
-          description={locationsCovered.description}
-          locations={locationsCovered.locations}
-          image={locationsCovered.image}
         />
       );
     }

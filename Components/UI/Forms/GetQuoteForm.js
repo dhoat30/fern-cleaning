@@ -14,7 +14,7 @@ import GoogleAutocomplete from "@/Components/GoogleMaps/GoogleAutoComplete";
 import styles from "./FormStyle.module.scss";
 import { useClickIds } from "@/hooks/useClickIds";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import QuoteSubmitButton from "./QuoteSubmitButton";
 import { cleaningPhone, cleaningPhoneHref } from "@/utils/cleaningContact";
 import { isQuoteSubmissionSuccessful, trackQuoteSubmission } from "@/utils/quoteTracking";
 
@@ -303,17 +303,7 @@ export default function GetQuoteForm({
               </div>
               {formInputs}
 
-              <Button
-                // newSubmission={newSubmission}
-                type="submit"
-                loading={isLoading}
-                // isSuccess={isSuccess}
-                variant="contained"
-                className="mt-16 full-width"
-                endIcon={variant === "hero" ? <ArrowForwardIcon /> : undefined}
-              >
-                {variant === "hero" ? "Submit" : "Get My Free Quote"}
-              </Button>
+              <QuoteSubmitButton isLoading={isLoading} variant={variant} />
               {!hideFooter && (
                 <>
                   {cleaningPhone && <Button

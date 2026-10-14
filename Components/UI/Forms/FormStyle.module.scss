@@ -23,6 +23,23 @@
   }
 }
 
+.submitButton:global(.MuiButton-loading.Mui-disabled) {
+  background: var(--brand-primary);
+  box-shadow: none;
+
+  .submitLabel { visibility: hidden; }
+}
+
+.loadingContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .hero {
   .inputWrapper > :global(.MuiFormControl-root) {
     margin-top: 16px;
@@ -61,8 +78,10 @@
     text-transform: uppercase;
     box-shadow: none;
     &:hover { background: var(--brand-accent-hover); }
+    &:global(.MuiButton-loading.Mui-disabled) { background: var(--hero-accent); }
     &:focus-visible { outline: 3px solid var(--hero-ink); outline-offset: 3px; }
     :global(.MuiButton-endIcon) { margin-left: 14px; }
     :global(.MuiCircularProgress-root) { color: var(--hero-ink); }
+    .loadingContent { color: var(--hero-ink); }
   }
 }

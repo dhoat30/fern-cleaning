@@ -6,6 +6,7 @@ import FormSection from "@/Components/UI/Layout/Sections/FormSection/FormSection
 import CleaningServices from "@/Components/UI/Layout/Sections/ServicesSection/CleaningServices";
 import RegularProcess from "@/Components/UI/Layout/Sections/Process/RegularProcess";
 import FaqAccordionSection from "@/Components/UI/Layout/Sections/FaqAccordionSection/FaqAccordionSection";
+import LocationsCovered from "@/Components/UI/LocationsCovered/LocationsCovered";
 import { cleaningPhone, cleaningPhoneHref } from "@/utils/cleaningContact";
 import styles from "./page.module.scss";
 
@@ -100,6 +101,7 @@ export default function CarpetShampooPage() {
 
         <CleaningServices />
         <RegularProcess title="<h2>Your carpet clean in three simple steps.</h2>" description="A straightforward booking, with the details agreed before we arrive." cards={steps} ctaHref="#quote-form" />
+        <LocationsCovered />
         <FaqAccordionSection title="Carpet shampooing questions, answered." description="A few things to know before your clean." qaData={faqs} />
       </main>
       <Footer footerCtaData={{

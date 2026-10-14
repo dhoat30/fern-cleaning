@@ -4,5 +4,5 @@ export const headerLinks = [
   { label: "Move-In Cleaning", url: "/move-in-cleaning-hamilton" },
   { label: "Our Services", url: "/#our-services" },
   { label: "Our Work", url: "/#our-work" },
-  { label: "Contact Us", url: "#footer" },
+  { label: "Areas We Cover", url: "#areas-we-cover" },
 ];

@@ -23,4 +23,8 @@ export const usefulLinks = [
     label: "Our Work",
     url: "/#our-work",
   },
+  {
+    label: "Areas We Cover",
+    url: "/#areas-we-cover",
+  },
 ];

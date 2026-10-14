@@ -30,7 +30,6 @@ export default async function Home() {
           uspTable={options.usp_table}
           sections={sections}
           uspData={options.usp}
-          locationsCovered={options.locations_covered}
           hoursCalculatorData={options.hours_calculator}
           servicesData={options.services}
         />

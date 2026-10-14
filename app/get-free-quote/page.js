@@ -4,6 +4,7 @@ import Header from "@/Components/UI/Header/Header";
 import { getSinglePostData } from "@/utils/fetchData";
 import Footer from "@/Components/UI/Footer/Footer";
 import FormSection from "@/Components/UI/Layout/Sections/FormSection/FormSection";
+import LocationsCovered from "@/Components/UI/LocationsCovered/LocationsCovered";
 export async function generateMetadata(props, parent) {
   // optionally access and extend (rather than replace) parent metadata
 
@@ -36,6 +37,7 @@ export default async function Home() {
           usp={{ text_usp: hero?.text_usp }}
           graphic={hero?.graphic}
         />
+        <LocationsCovered />
       </main>
       <Footer showFooterCta={false} />
     </>
